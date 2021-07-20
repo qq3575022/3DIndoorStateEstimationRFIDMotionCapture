@@ -90,18 +90,21 @@ end
 N = 0;
 %%
 figure
-subplot(9,1,1), plot(time(1:end-N), x(1,:), 'b', 'LineWidth', 2); hold on; plot(time, coord3(1,1:end), 'r', 'LineWidth', 2); legend('estimated', 'gt'); title('Estimated position along x axis'); grid on; grid minor; ylabel('pos  [m]');xlim([108, 112])
-subplot(9,1,2), plot(time(1:end-N), x(2,:), 'b', 'LineWidth', 2); hold on; plot(time, coord3(4,1:end), 'r', 'LineWidth', 2); legend('estimated', 'gt'); title('Estimated velocity along x axis'); grid on;grid minor; ylabel('vel  [m/s]');xlim([108, 112])
-subplot(9,1,3), plot(time(1:end-N), x(3,:), 'b', 'LineWidth', 2); hold on; plot(time, coord3(7,1:end), 'r', 'LineWidth', 2); legend('estimated', 'gt'); title('Estimated acceleration along x axis'); grid on;grid minor; ylabel('acc  [m/s^2]');xlim([108, 112])
-subplot(9,1,4), plot(time(1:end-N), x(4,:), 'b', 'LineWidth', 2); hold on; plot(time, coord3(2,1:end), 'r', 'LineWidth', 2); legend('estimated', 'gt'); title('Estimated position along y axis'); grid on; grid minor; ylabel('pos  [m]');xlim([108, 112])
-subplot(9,1,5), plot(time(1:end-N), x(5,:), 'b', 'LineWidth', 2); hold on; plot(time, coord3(5,1:end), 'r', 'LineWidth', 2); legend('estimated', 'gt'); title('Estimated velocity along y axis'); grid on;grid minor; ylabel('vel  [m/s]');xlim([108, 112])
-subplot(9,1,6), plot(time(1:end-N), x(6,:), 'b', 'LineWidth', 2); hold on; plot(time, coord3(8,1:end), 'r', 'LineWidth', 2); legend('estimated', 'gt'); title('Estimated acceleration along y axis'); grid on;grid minor; ylabel('acc  [m/s^2]');xlim([108, 112])
-subplot(9,1,7), plot(time(1:end-N), x(7,:), 'b', 'LineWidth', 2); hold on; plot(time, coord3(3,1:end), 'r', 'LineWidth', 2); legend('estimated', 'gt'); title('Estimated position along z axis'); grid on; grid minor; ylabel('pos  [m]');xlim([108, 112])
-subplot(9,1,8), plot(time(1:end-N), x(8,:), 'b', 'LineWidth', 2); hold on; plot(time, coord3(6,1:end), 'r', 'LineWidth', 2); legend('estimated', 'gt'); title('Estimated velocity along z axis'); grid on;grid minor; ylabel('vel  [m/s]');xlim([108, 112])
-subplot(9,1,9), plot(time(1:end-N), x(9,:), 'b', 'LineWidth', 2); hold on; plot(time, coord3(9,1:end), 'r', 'LineWidth', 2); legend('estimated', 'gt'); title('Estimated acceleration along z axis'); grid on;grid minor; ylabel('acc  [m/s^2]');xlim([108, 112])
+subplot(9,1,1), plot(time(1:end-N), x(1,:),  'LineWidth', 3); hold on; plot(time, coord3(1,1:end), 'r', 'LineWidth', 3); legend('estimated', 'ground truth','location','southeast'); title('Estimated position along x axis'); grid on; grid minor; ylabel('pos  [m]');xlim([108, 112])
+subplot(9,1,2), plot(time(1:end-N), x(2,:),  'LineWidth', 3); hold on; plot(time, coord3(4,1:end), 'r', 'LineWidth', 3); legend('estimated', 'ground truth'); title('Estimated velocity along x axis'); grid on;grid minor; ylabel('vel  [m/s]');xlim([108, 112])
+subplot(9,1,3), plot(time(1:end-N), x(3,:),  'LineWidth', 3); hold on; plot(time, coord3(7,1:end), 'r', 'LineWidth', 3); legend('estimated', 'ground truth'); title('Estimated acceleration along x axis'); grid on;grid minor; ylabel('acc  [m/s^2]');xlim([108, 112])
+subplot(9,1,4), plot(time(1:end-N), x(4,:),  'LineWidth', 3); hold on; plot(time, coord3(2,1:end), 'r', 'LineWidth', 3); legend('estimated', 'ground truth','location','southeast'); title('Estimated position along y axis'); grid on; grid minor; ylabel('pos  [m]');xlim([108, 112])
+subplot(9,1,5), plot(time(1:end-N), x(5,:),  'LineWidth', 3); hold on; plot(time, coord3(5,1:end), 'r', 'LineWidth', 3); legend('estimated', 'ground truth'); title('Estimated velocity along y axis'); grid on;grid minor; ylabel('vel  [m/s]');xlim([108, 112])
+subplot(9,1,6), plot(time(1:end-N), x(6,:),  'LineWidth', 3); hold on; plot(time, coord3(8,1:end), 'r', 'LineWidth', 3); legend('estimated', 'ground truth'); title('Estimated acceleration along y axis'); grid on;grid minor; ylabel('acc  [m/s^2]');xlim([108, 112])
+subplot(9,1,7), plot(time(1:end-N), x(7,:),  'LineWidth', 3); hold on; plot(time, coord3(3,1:end), 'r', 'LineWidth', 3); legend('estimated', 'ground truth','location','southeast'); title('Estimated position along z axis'); grid on; grid minor; ylabel('pos  [m]');xlim([108, 112])
+subplot(9,1,8), plot(time(1:end-N), x(8,:),  'LineWidth', 3); hold on; plot(time, coord3(6,1:end), 'r', 'LineWidth', 3); legend('estimated', 'ground truth'); title('Estimated velocity along z axis'); grid on;grid minor; ylabel('vel  [m/s]');xlim([108, 112])
+subplot(9,1,9), plot(time(1:end-N), x(9,:),  'LineWidth', 3); hold on; plot(time, coord3(9,1:end), 'r', 'LineWidth', 3); legend('estimated', 'ground truth'); title('Estimated acceleration along z axis'); grid on;grid minor; ylabel('acc  [m/s^2]');xlim([108, 112])
 xlabel('t [s]')
 
 %%
-rmsErrorX = 1000*rms(x(1,:)-coord3(1,1:end-N))
-rmsErrorY = 1000*rms(x(4,:)-coord3(2,1:end-N))
-rmsErrorZ = 1000*rms(x(7,:)-coord3(3,1:end-N))
+rmsErrorX = 1000*rms(x(1,:)-coord3(1,1:end-N));
+rmsErrorY = 1000*rms(x(4,:)-coord3(2,1:end-N));
+rmsErrorZ = 1000*rms(x(7,:)-coord3(3,1:end-N));
+rms3D = sqrt(rmsErrorX^2 + rmsErrorY^2 + rmsErrorZ^2)
+rms2D = sqrt(rmsErrorX^2 + rmsErrorY^2)
+rmsErrorZ

@@ -4,7 +4,7 @@ x2 = [2.29, 0,    1.27];
 x3 = [2.29, 2.52, 0.865]; 
 x4 = [0,    2.52, 1.27];
 
-%load('SimRFMag1.mat'); 
+%load('SimRFMag2.mat'); 
 load('SimRFPhase4.mat'); 
 load('SimIMU.mat')
 

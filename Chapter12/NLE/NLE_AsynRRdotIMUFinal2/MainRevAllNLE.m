@@ -8,8 +8,8 @@ x4 = [0,    2.52, 1.27];
 % load('RF.mat'); 
 % load('IMU.mat')
 
-load('SimRFMag1.mat'); 
-%load('SimRFPhase4.mat'); 
+%load('SimRFMag2.mat'); 
+load('SimRFPhase4.mat'); 
 load('SimIMU.mat')
 % -------------- Time and Coordinates ----------
 % time:     IMU Measurement
