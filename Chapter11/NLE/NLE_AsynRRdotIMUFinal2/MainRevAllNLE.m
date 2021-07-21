@@ -25,7 +25,7 @@ factor = 3;
 
 for m = 1:1:length(time)-N
     
-    [y, i, j, l, index, len] = gety(r1, rdot1, r2, rdot2, r3+0.05, rdot3, r4, rdot4, angle(1,:), gyro(1,:), angle(2,:), gyro(2,:), angle(3,:), gyro(3,:), acc(1,:), acc(2,:), acc(3,:), accT, gyroT, rtime, time, i, j, l, m, N, factor);
+    [y, i, j, l, index, len] = gety(r1, rdot1, r2, rdot2, r3, rdot3, r4, rdot4, angle(1,:), gyro(1,:), angle(2,:), gyro(2,:), angle(3,:), gyro(3,:), acc(1,:), acc(2,:), acc(3,:), accT, gyroT, rtime, time, i, j, l, m, N, factor);
 
     x(:,m) = lsqnonlin(@(xx)getNLE(y, xx, N, index, len, time, m, factor),[0.5;0.5;0.5; 0.5;0.5;0.5; 0.5;0.5;0.5; 0.5;0.5;0.5; 0.5;0.5;0.5]);
 
