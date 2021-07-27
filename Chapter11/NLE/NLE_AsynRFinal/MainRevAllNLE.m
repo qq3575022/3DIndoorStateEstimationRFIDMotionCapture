@@ -17,14 +17,14 @@ load('RF.mat');
 %%
 N = 3; i = 1; j = 1; k = 1; l = 1;
 % Initiate x, e and temproary variable
-x = [0.5;0.5;0.5; 0.5;0.5;0.5; 1.1;0.5;0.5; 0.5;0.5;0.5; 0.5;0.5;0.5]*ones(1,length(rtime)-N);e = NaN(1,length(rtime)-N);
+x = [0.5;0.5;0.5; 0.5;0.5;0.5; 1.1;0.5;0.5]*ones(1,length(rtime)-N);e = NaN(1,length(rtime)-N);
 factor = 1;
 
 for m = 1:1:length(rtime)-N
     
     [y,  l, index, len] = gety(r1, r2, r3, r4, rtime, l, m, N, factor);
 
-    x(:,m) = lsqnonlin(@(xx)getNLE(y, xx, N, index, len, rtime, m, factor),[0.5;0.5;0.5; 0.5;0.5;0.5; 0.5;0.5;0.5; 0.5;0.5;0.5; 0.5;0.5;0.5]);
+    x(:,m) = lsqnonlin(@(xx)getNLE(y, xx, N, index, len, rtime, m, factor),[0.5;0.5;0.5; 0.5;0.5;0.5; 0.5;0.5;0.5]);
 
     F = getF(rtime, m, m+N);
     x(:,m) = F*x(:,m);

@@ -18,7 +18,7 @@ time = unique(sort([rtime; itime]),'rows');
 
 [coord3, radial] = get3Dcoord(x1, x2, x3, x4, time);
 %%
-N = 5; i = 1; j = 1; k = 1; l = 1;
+N = 15; i = 1; j = 1; k = 1; l = 1;
 % Initiate x, e and temproary variable
 x = [0.5;0.5;0.5; 0.5;0.5;0.5; 1.1;0.5;0.5; 0.5;0.5;0.5; 0.5;0.5;0.5]*ones(1,length(time)-N);e = NaN(1,length(time)-N);
 factor = 3;
